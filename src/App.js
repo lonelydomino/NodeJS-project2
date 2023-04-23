@@ -86,13 +86,13 @@ class App extends Component {
           token: resData.token,
           authLoading: false,
           userId: resData.userId
-        });
+        })
         localStorage.setItem('token', resData.token);
         localStorage.setItem('userId', resData.userId);
         const remainingMilliseconds = 60 * 60 * 1000;
         const expiryDate = new Date(
           new Date().getTime() + remainingMilliseconds
-        );
+        )
         localStorage.setItem('expiryDate', expiryDate.toISOString());
         this.setAutoLogout(remainingMilliseconds);
       })
